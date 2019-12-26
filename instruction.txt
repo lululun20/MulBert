@@ -1,0 +1,50 @@
+1. Create a conda environment for bert
+   ```
+   conda create --name bert
+   conda activate bert
+   ```
+2. install pytorch using the command from this site:
+   https://pytorch.org/
+   You need choose the correct configuration, such as python version, cuda version. After that, you can install it by one single command. For example:
+   ```
+   conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+   ```
+3. Install bert
+   3.1 Prepare data
+   ```
+   mkdir MulBert
+   cd MulBert
+   mkdir glue_data
+   cd glue_data
+   mkdir MLSA
+   ```
+   Blend all (merge and then randomly shuffle) the training data (in all 7 languages), name it train.tsv and put it in this MLSA folder. 
+   Put all the test files in this folder as well and name them in the following fashion:
+   en_test.tsv
+   fr_test.tsv
+   is_test.tsv
+   .
+   .
+   .
+   
+   3.2 Clone the repo
+   Assuming we are now in the MulBert directory,
+   ```   
+   git clone https://github.com/huggingface/transformers
+   ```
+   3.3 Install
+   ```
+   cd transformers
+   sudo pip install . (Or sudo pip3 install .)
+   ```
+   3.4 Run the code
+   ```
+   cd examples
+   ```
+   There is one languages.txt file in the examples folder, make sure you modify it according to your languages before you run the code.
+   Then
+   ```
+   ./run_sa.sh
+   ```
+   This should be able to produce the results. 
+

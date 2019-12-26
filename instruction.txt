@@ -10,7 +10,7 @@
    conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
    ```
 3. Install bert
-   3.1 Prepare data
+   3.1 Prepare data   
    ```
    mkdir MulBert
    cd MulBert
@@ -18,6 +18,7 @@
    cd glue_data
    mkdir MLSA
    ```
+   I have actually create the folders alreadly. You can directly clone the repo in 3.2. But don't forget to name the data correctly and put them in the MLSA folder. 
    Blend all (merge and then randomly shuffle) the training data (in all 7 languages), name it train.tsv and put it in this MLSA folder. 
    Put all the test files in this folder as well and name them in the following fashion:
    en_test.tsv
@@ -30,7 +31,7 @@
    3.2 Clone the repo
    Assuming we are now in the MulBert directory,
    ```   
-   git clone https://github.com/huggingface/transformers
+   git clone https://github.com/kinjad/MulBert.git
    ```
    3.3 Install
    ```
@@ -47,4 +48,4 @@
    ./run_sa.sh
    ```
    This should be able to produce the results. 
-
+   
